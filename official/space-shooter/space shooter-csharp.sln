@@ -1,7 +1,7 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
-Project("{F0AFEBCC-3BF4-130B-D746-47464A9EDF6B}") = "space shooter", "Assembly-CSharp.csproj", "{E771257E-0312-8575-1C5A-8C45415A7023}"
+Project("{F0AFEBCC-3BF4-130B-D746-47464A9EDF6B}") = "space shooter", "Assembly-CSharp-vs.csproj", "{E771257E-0312-8575-1C5A-8C45415A7023}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,7 +17,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																	GlobalSection(MonoDevelopProperties) = preSolution
+																			GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
