@@ -46,7 +46,7 @@ namespace CompleteProject
 			if(Input.GetButton ("Fire1") && timer >= timeBetweenBullets && Time.timeScale != 0)
             {
                 // ... shoot the gun.
-                Shoot ();
+                //Shoot ();
             }
 #else
             // If there is input on the shoot direction stick and it's time to fire...
@@ -74,7 +74,7 @@ namespace CompleteProject
         }
 
 
-        void Shoot ()
+        public void Shoot (Vector3 direction)
         {
             // Reset the timer.
             timer = 0f;
@@ -96,7 +96,7 @@ namespace CompleteProject
 
             // Set the shootRay so that it starts at the end of the gun and points forward from the barrel.
             shootRay.origin = transform.position;
-            shootRay.direction = transform.forward;
+            shootRay.direction = direction;
 
             // Perform the raycast against gameobjects on the shootable layer and if it hits something...
             if(Physics.Raycast (shootRay, out shootHit, range, shootableMask))
