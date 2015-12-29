@@ -6,5 +6,13 @@ public class Test1Trigger : MonoBehaviour {
 		if (Input.GetKeyDown ("q")) {
 			EventManager.TriggerEvent("test");
 		}
+		
+		if (Input.GetKeyDown ("w")) {
+			EventManager.TriggerEvent("Spawn");
+		}
+
+		if (Input.GetKeyDown ("e")) {
+			EventManager.TriggerEvent("Destroy");
+		}
 	}
 }
