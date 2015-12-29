@@ -15,6 +15,6 @@ public class Player : MonoBehaviour {
 		}
 		
 		Vector3 velocity = new Vector3(0, speed * direction * Time.deltaTime, 0);
-		rigidbody.velocity = velocity;
+		GetComponent<Rigidbody>().velocity = velocity;
 	}
 }

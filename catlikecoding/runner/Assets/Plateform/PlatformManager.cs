@@ -26,8 +26,8 @@ public class PlatformManager : ReusableQueue {
 	void UpdateOption(Transform o) {
 		int optionIndex = Random.Range(0, options.Length);
 		PlatformOption option = options[optionIndex];
-		o.renderer.material = option.material;
-		o.collider.material = option.physicMaterial;
+		o.GetComponent<Renderer>().material = option.material;
+		o.GetComponent<Collider>().material = option.physicMaterial;
 	}
 	
 	void UpdateNextPosition(Transform o) {

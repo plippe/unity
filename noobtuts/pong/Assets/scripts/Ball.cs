@@ -33,7 +33,7 @@ public class Ball : MonoBehaviour {
 		int direction = 1;
 		if(Random.value > 0.5) { direction = -1; }
 		Vector3 velocity = new Vector3(direction, Random.Range(-1f, 1f), 0);
-		rigidbody.velocity = velocity * speed * Time.deltaTime;
+		GetComponent<Rigidbody>().velocity = velocity * speed * Time.deltaTime;
 	}
 	
 	void UpdateScore() {

@@ -8,7 +8,7 @@ public class Player : MonoBehaviour {
 		float horizontal = Input.GetAxis("Horizontal");		
 		Vector3 force = new Vector3(horizontal, 0, 0);
 		
-		rigidbody.velocity = force * playerSpeed * Time.deltaTime;		
+		GetComponent<Rigidbody>().velocity = force * playerSpeed * Time.deltaTime;		
 	}
 			
 	void FixedUpdate() {

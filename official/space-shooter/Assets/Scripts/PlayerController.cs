@@ -21,15 +21,15 @@ public class PlayerController : MonoBehaviour {
 		float vertical = Input.GetAxis("Vertical");
 		
 		Vector3 velocity = new Vector3(horizontal, 0, vertical) * speed;
-		rigidbody.velocity = velocity;
+		GetComponent<Rigidbody>().velocity = velocity;
 		
-		rigidbody.position = new Vector3(
-			Mathf.Clamp(rigidbody.position.x, boundary.xMin, boundary.xMax), 
+		GetComponent<Rigidbody>().position = new Vector3(
+			Mathf.Clamp(GetComponent<Rigidbody>().position.x, boundary.xMin, boundary.xMax), 
 			0, 
-			Mathf.Clamp(rigidbody.position.z, boundary.zMin, boundary.zMax)
+			Mathf.Clamp(GetComponent<Rigidbody>().position.z, boundary.zMin, boundary.zMax)
 		);
 		
-		rigidbody.rotation = Quaternion.Euler(0, 0, rigidbody.velocity.x * -tilt);
+		GetComponent<Rigidbody>().rotation = Quaternion.Euler(0, 0, GetComponent<Rigidbody>().velocity.x * -tilt);
 	}
 
 	void Update() {

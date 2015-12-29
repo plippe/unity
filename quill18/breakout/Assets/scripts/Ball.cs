@@ -10,7 +10,7 @@ public class Ball : MonoBehaviour {
 		launched = true;
 		
 		Vector3 velocity = new Vector3(0, 1, 0);
-		rigidbody.velocity = velocity * speed;
+		GetComponent<Rigidbody>().velocity = velocity * speed;
 	}
 	
 	void Update() {
@@ -31,11 +31,11 @@ public class Ball : MonoBehaviour {
 	}
 	
 	void OnCollisionEnter(Collision c) {
-		if(c.collider == player.collider) {
+		if(c.collider == player.GetComponent<Collider>()) {
 			float angle = c.contacts[0].point.x - player.transform.position.x;
-			Vector3 velocity = new Vector3(angle * 20, rigidbody.velocity.y, 0);
+			Vector3 velocity = new Vector3(angle * 20, GetComponent<Rigidbody>().velocity.y, 0);
 			
-			rigidbody.velocity = velocity;
+			GetComponent<Rigidbody>().velocity = velocity;
 		}	
 	}
 }
