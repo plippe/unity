@@ -23,16 +23,16 @@ function Update () {
 }
 
 function Respawn() {
-	renderer.enabled = false;
+	GetComponent.<Renderer>().enabled = false;
 	yield WaitForSeconds(respawnTime);
-	renderer.enabled = true;
+	GetComponent.<Renderer>().enabled = true;
 }
 
 function Destroy() {
 	var explosionInstance: GameObject = Instantiate(explosion, transform.position, transform.rotation);
 	GameObject.Destroy(explosionInstance, 3);
 	
-	renderer.material.color = Color(Random.Range(0.0,1.0),Random.Range(0.0,1.0),Random.Range(0.0,1.0));
+	GetComponent.<Renderer>().material.color = Color(Random.Range(0.0,1.0),Random.Range(0.0,1.0),Random.Range(0.0,1.0));
 	
 	Teleport();
 }

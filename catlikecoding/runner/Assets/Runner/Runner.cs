@@ -13,7 +13,7 @@ public class Runner : MonoBehaviour {
 	private static int boosts;
 	
 	void Awake() {
-		rigidbody.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionZ;
+		GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionZ;
 	}	
 	
 	void Start () {
@@ -27,7 +27,7 @@ public class Runner : MonoBehaviour {
 	void Update () {
 		if(touchingPlatform && Input.GetButtonDown("Jump")){
 			Vector3 velocity = (boosts > 0)? boostVelocity : jumpVelocity;
-			rigidbody.AddForce(velocity, ForceMode.VelocityChange);
+			GetComponent<Rigidbody>().AddForce(velocity, ForceMode.VelocityChange);
 			touchingPlatform = false;
 			
 			boosts = Mathf.Max (boosts - 1, 0);
@@ -41,7 +41,7 @@ public class Runner : MonoBehaviour {
 	
 	void FixedUpdate () {
 		if(touchingPlatform){
-			rigidbody.AddForce(acceleration, 0f, 0f, ForceMode.Acceleration);
+			GetComponent<Rigidbody>().AddForce(acceleration, 0f, 0f, ForceMode.Acceleration);
 		}
 	}
 	
@@ -59,15 +59,15 @@ public class Runner : MonoBehaviour {
 	
 	private void GameStart () {
 		transform.localPosition = startPosition;
-		renderer.enabled = true;
-		rigidbody.isKinematic = false;
+		GetComponent<Renderer>().enabled = true;
+		GetComponent<Rigidbody>().isKinematic = false;
 		enabled = true;
 		boosts = 0;
 	}
 	
 	private void GameOver () {
-		renderer.enabled = false;
-		rigidbody.isKinematic = true;
+		GetComponent<Renderer>().enabled = false;
+		GetComponent<Rigidbody>().isKinematic = true;
 		enabled = false;
 	}	
 }

@@ -21,7 +21,7 @@ public class Player : MonoBehaviour {
 		
 		Vector3 force = new Vector3(horizontal, 0, vertical);
 		
-		rigidbody.AddForce(force * speed * Time.deltaTime);
+		GetComponent<Rigidbody>().AddForce(force * speed * Time.deltaTime);
 	}
 	
 	void OnTriggerEnter (Collider el) {
